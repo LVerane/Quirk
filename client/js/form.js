@@ -1,5 +1,4 @@
 $(function() {
-
   if (window.location.pathname === "/") {
     $("#tempNormalRegister").attr("hidden", true);
     $(".signup-form").remove();
@@ -61,7 +60,7 @@ $(function() {
           // console.log("--------------");
         }
       })
-      .catch(err => alert(err.responseText));
+      .fail(err => console.log(err));
   }
 
   function signup(e) {
@@ -89,7 +88,7 @@ $(function() {
           window.location = "/me";
         }
       })
-      .catch(err => alert(err.responseText));
+      .fail(err => alert(err.responseText));
   }
 
   function logout(e) {
@@ -173,7 +172,7 @@ $(function() {
   };
 
   function waitRefresh() {
-    setTimeout(refresh,100)
+    setTimeout(refresh, 100);
   }
 
   var handleFormSubmit = function(event) {
@@ -184,7 +183,7 @@ $(function() {
       UserId: $(this).data("value")
     };
 
-    API.saveBoard(board)
+    API.saveBoard(board);
     // .then(function() {
     //   refresh();
     // });
@@ -232,14 +231,18 @@ $(function() {
 
   var array = [];
 
-  function updateSuccess () {
-    $("#showSubmit").text(`Username updated successfully to ${$("#newUsername").val()}!`);
+  function updateSuccess() {
+    $("#showSubmit").text(
+      `Username updated successfully to ${$("#newUsername").val()}!`
+    );
     $("#currentUsername").val("");
     $("#newUsername").val("");
   }
 
-  function updateFail () {
-    $("#showSubmit").text(`Update unsuccessful. Your input was: ${$("#currentUsername").val()}.`);
+  function updateFail() {
+    $("#showSubmit").text(
+      `Update unsuccessful. Your input was: ${$("#currentUsername").val()}.`
+    );
     $("#currentUsername").val("");
     $("#newUsername").val("");
   }
@@ -250,9 +253,7 @@ $(function() {
     }
   }
 
-
   function updateUsername() {
-
     $.ajax({
       method: "PUT",
       url: "/changeUsername/",
@@ -264,15 +265,14 @@ $(function() {
           .val()
           .trim()
       },
-      success: function(){
+      success: function() {
         updateSuccess();
-        array.push("Success!")
-     },
-    })
+        array.push("Success!");
+      }
+    });
 
     setTimeout(waitForIt, 100);
-    
-  };
+  }
 
   $submitBtn.on("click", handleFormSubmit);
   $(document).on("click", ".deleteBoard", handleDeleteBtnClick);

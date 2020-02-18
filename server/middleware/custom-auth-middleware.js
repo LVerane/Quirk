@@ -10,12 +10,19 @@ module.exports = async function(req, res, next) {
   // the authenticated user.
   if (token) {
     // look for an auth token that matches the cookie or header
-    const authToken = await AuthToken.find({ where: { token }, include: User });
+    try {
+      const authToken = await AuthToken.findOne({
+        where: { token },
+        include: User
+      });
 
-    // if there is an auth token found, we attach it's associated
-    // user to the req object so we can use it in our routes
-    if (authToken) {
-      req.user = authToken.User;
+      // if there is an auth token found, we attach it's associated
+      // user to the req object so we can use it in our routes
+      if (authToken) {
+        req.user = authToken.User;
+      }
+    } catch (err) {
+      console.log(err);
     }
   }
   next();
