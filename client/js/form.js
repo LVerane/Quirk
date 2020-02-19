@@ -183,14 +183,10 @@ $(function() {
       UserId: $(this).data("value")
     };
 
-    API.saveBoard(board);
-    // .then(function() {
-    //   refresh();
-    // });
-
-    $boardText.val("");
-    console.log("waiting");
-    waitRefresh();
+    API.saveBoard(board).then(res => {
+      console.log(res);
+      waitRefresh();
+    });
   };
 
   var handleTasks = function(event) {
@@ -296,7 +292,7 @@ $(function() {
       type: "POST",
       url: "api/adduser",
       data: test
-    }).then(response => console.log(response));
+    }).then(response => alert(response));
   }
 
   function assignUserToTask() {

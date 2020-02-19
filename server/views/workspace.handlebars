@@ -40,7 +40,7 @@
           {{#each boards}}
           <li data-id="{{this.id}}" class="list-group-item">
             <a href="board/{{this.id}}">{{this.text}}</a>
-            <input data-id="{{this.id}}" type="text" id="task-text" class="form-control" aria-describedby="task-text"
+            <input data-id="{{this.id}}" type="text" class="form-control" aria-describedby="task-text"
               placeholder="Enter Task Text">
             <button class="btn btn-danger float-right deleteBoard">ｘ</button>
             <button id="{{this.id}}" class="btn btn-warning float-right addTask">Add Task</button>

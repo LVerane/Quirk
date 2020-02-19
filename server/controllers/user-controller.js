@@ -126,9 +126,10 @@ router.get("/api/tasks", function(req, res) {
 // });
 router.post("/api/boards", function(req, res) {
   db.Board.create({ text: req.body.text }).then(data => {
-    db.User.findOne({ where: { id: req.body.UserId } }).then(function(user) {
-      db.Board.findOne({ where: { id: data.id } }).then(function(board) {
+    db.User.findOne({ where: { id: req.body.UserId } }).then(user => {
+      db.Board.findOne({ where: { id: data.id } }).then(board => {
         user.addBoards([board]);
+        res.send(true);
       });
     });
   });
@@ -154,27 +155,26 @@ router.delete("/api/tasks/:id", function(req, res) {
 });
 
 router.put("/changeUsername", function(req, res) {
-
-  db.User.count({ where: {username: req.body.currentUsername} }).then(function(count){
-    if (count === 0) {
-      throw Error ('Current Username Does Not')
-    } else {
-      db.User.update(
-        {
-          username: req.body.newUsername
-        },
-        {
-          where: {
-            username: req.body.currentUsername
+  db.User.count({ where: { username: req.body.currentUsername } }).then(
+    function(count) {
+      if (count === 0) {
+        throw Error("Current Username Does Not");
+      } else {
+        db.User.update(
+          {
+            username: req.body.newUsername
+          },
+          {
+            where: {
+              username: req.body.currentUsername
+            }
           }
-        }
-      ).then(function(dbUser) {
-        res.json(dbUser);
-      });
+        ).then(function(dbUser) {
+          res.json(dbUser);
+        });
+      }
     }
-  })
-    
-
+  );
 });
 
 router.put("/user", function(req, res) {
@@ -226,30 +226,27 @@ router.post("/api/adduser", function(req, res) {
 });
 
 router.put("/changeUsername", function(req, res) {
-
-  db.User.count({ where: {username: req.body.currentUsername} }).then(function(count){
-    if (count === 0) {
-      throw Error ('Current Username Does Not')
-    } else {
-      db.User.update(
-        {
-          username: req.body.newUsername
-        },
-        {
-          where: {
-            username: req.body.currentUsername
+  db.User.count({ where: { username: req.body.currentUsername } }).then(
+    function(count) {
+      if (count === 0) {
+        throw Error("Current Username Does Not");
+      } else {
+        db.User.update(
+          {
+            username: req.body.newUsername
+          },
+          {
+            where: {
+              username: req.body.currentUsername
+            }
           }
-        }
-      ).then(function(dbUser) {
-        res.json(dbUser);
-      });
+        ).then(function(dbUser) {
+          res.json(dbUser);
+        });
+      }
     }
-  })
-    
-
+  );
 });
-
-
 
 router.put("/api/assignuser", function(req, res) {
   // Update takes in an object describing the properties we want to update, and
