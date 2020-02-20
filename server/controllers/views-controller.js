@@ -27,14 +27,33 @@ router.get("/me", function(req, res) {
         { replacements: [req.user.id], type: db.Sequelize.QueryTypes.SELECT }
       )
       .then(data => {
-        var dataId = data.map(e => e.id);
-        db.Board.findAll({
-          where: { id: dataId },
-          include: [{ model: db.Task }]
-        }).then(function(dbBoards) {
-          res.render("workspace", {
-            boards: dbBoards,
-            user: req.user
+        var boardsArray = [];
+        data.map(e => {
+          db.Board.findAll({
+            where: { id: e.id },
+            include: [{ model: db.Task }]
+          }).then(function(dbBoards) {
+            db.sequelize
+              .query(
+                `select u.username from Users u
+        inner join Middles m on m.userid = u.id
+        inner join Boards b on b.id = m.boardid
+        where b.id = ?;`,
+                {
+                  replacements: [e.id],
+                  type: db.Sequelize.QueryTypes.SELECT
+                }
+              )
+              .then(boardUsers => {
+                dbBoards[0].boardUsers = boardUsers.map(e => e.username);
+                boardsArray.push(dbBoards[0]);
+                if (data.length === boardsArray.length) {
+                  res.render("workspace", {
+                    boards: boardsArray,
+                    user: req.user
+                  });
+                }
+              });
           });
         });
       });

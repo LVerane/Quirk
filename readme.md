@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <h1 align="center">quirk.</h1>
-    <a href="https://github.com/ALayendecker/Project-2"><strong>Documentation and Repo Link</strong></a>
+    <a href="https://github.com/LVerane/Quirk"><strong>Documentation and Repo Link</strong></a>
     <br />
   </p>
 </p>
@@ -137,7 +137,7 @@ This app uses an MVC file structure. Displayed below.
 
 ## Getting Started
 
-Simply visit (https://project-two-0.herokuapp.com/)
+Simply visit (https://quirk-0.herokuapp.com/)
 
 If you want to get your hands on the code simply look at the following section [Installation](#installation)
 
@@ -146,7 +146,7 @@ If you want to get your hands on the code simply look at the following section [
 1. Clone the repo
 
 ```sh
-git clone https://github.com/ALayendecker/Project-2.git
+git clone https://github.com/LVerane/Quirk.git
 ```
 
 2. Install NPM packages
@@ -167,7 +167,7 @@ Start a MySQL database and configure the server/config/config.json file accordin
 
 ## Usage
 
-Simply visit (https://project-two-0.herokuapp.com/) click the 'Create Account' button and sign up! Then proceed to login with your newly created credentials.
+Simply visit (https://quirk-0.herokuapp.com/) click the 'Create Account' button and sign up! Then proceed to login with your newly created credentials.
 
 You will then be able to add task boards add tasks inside those boards. You can also assign users to tasks as well!
 
@@ -193,18 +193,18 @@ Each time you log in you will also be provided a randomly generated cookie authe
 
 #### - [Remington Villa](https://github.com/remingtonjosh)
 
-Project Link: [https://github.com/Alayendecker/Project-2](https://github.com/Alayendecker/Project-2)
+Project Link: [https://github.com/LVerane/Quirk](https://github.com/LVerane/Quirk)
 
 Special thanks: [jgrisafe - For a well written article on Express and Sequelize Authentication and open source boilerplate](https://medium.com/@jgrisafe/custom-user-authentication-with-express-sequelize-and-bcrypt-667c4c0edef5)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Alayendecker/Project-2.svg?style=flat-square
-[contributors-url]: https://github.com/Alayendecker/Project-2/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Alayendecker/Project-2.svg?style=flat-square
-[forks-url]: https://github.com/Alayendecker/Project-2/network/members
-[stars-shield]: https://img.shields.io/github/stars/Alayendecker/Project-2.svg?style=flat-square
-[stars-url]: https://github.com/Alayendecker/Project-2/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Alayendecker/Project-2.svg?style=flat-square
-[issues-url]: https://github.com/Alayendecker/Project-2/issues
+[contributors-shield]: https://img.shields.io/github/contributors/LVerane/Quirk.svg?style=flat-square
+[contributors-url]: https://github.com/LVerane/Quirk/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/LVerane/Quirk.svg?style=flat-square
+[forks-url]: https://github.com/LVerane/Quirk/network/members
+[stars-shield]: https://img.shields.io/github/stars/LVerane/Quirk.svg?style=flat-square
+[stars-url]: https://github.com/LVerane/Quirk/stargazers
+[issues-shield]: https://img.shields.io/github/issues/LVerane/Quirk.svg?style=flat-square
+[issues-url]: https://github.com/LVerane/Quirk/issues
