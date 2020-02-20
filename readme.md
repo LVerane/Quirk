@@ -200,11 +200,11 @@ Special thanks: [jgrisafe - For a well written article on Express and Sequelize 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Alayendecker/Project-2.svg?style=flat-square
-[contributors-url]: https://github.com/Alayendecker/Project-2/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Alayendecker/Project-2.svg?style=flat-square
-[forks-url]: https://github.com/Alayendecker/Project-2/network/members
-[stars-shield]: https://img.shields.io/github/stars/Alayendecker/Project-2.svg?style=flat-square
-[stars-url]: https://github.com/Alayendecker/Project-2/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Alayendecker/Project-2.svg?style=flat-square
-[issues-url]: https://github.com/Alayendecker/Project-2/issues
+[contributors-shield]: https://img.shields.io/github/contributors/LVerane/Quirk.svg?style=flat-square
+[contributors-url]: https://github.com/LVerane/Quirk/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/LVerane/Quirk.svg?style=flat-square
+[forks-url]: https://github.com/LVerane/Quirk/network/members
+[stars-shield]: https://img.shields.io/github/stars/LVerane/Quirk.svg?style=flat-square
+[stars-url]: https://github.com/LVerane/Quirk/stargazers
+[issues-shield]: https://img.shields.io/github/issues/LVerane/Quirk.svg?style=flat-square
+[issues-url]: https://github.com/LVerane/Quirk/issues

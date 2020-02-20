@@ -280,10 +280,8 @@ $(function() {
   $(document).on("click", ".assignUser", assignUserToTask);
 
   function addUserToBoard() {
-    // console.log(this.id);
     // console.log(this.id.slice(8)); //to not repeat ids and fix it for the query
     var newUser = $(`input[data-value=${this.id}]`).val();
-    // console.log(newUser);
     var test = {
       username: newUser,
       temporaryId: this.id.slice(8)
@@ -292,14 +290,15 @@ $(function() {
       type: "POST",
       url: "api/adduser",
       data: test
-    }).then(response => alert(response));
+    }).then(res => {
+      alert(res);
+      location.reload();
+    });
   }
 
   function assignUserToTask() {
-    // console.log(this.id);
     // console.log(this.id.slice(8)); //to not repeat ids and fix it for the query
     var newAssign = $(`input[data-value=${this.id}]`).val();
-    // console.log(newAssign);
     $.ajax({
       method: "PUT",
       url: "api/assignuser",
