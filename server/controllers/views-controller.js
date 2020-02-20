@@ -28,15 +28,82 @@ router.get("/me", function(req, res) {
       )
       .then(data => {
         var dataId = data.map(e => e.id);
-        db.Board.findAll({
-          where: { id: dataId },
-          include: [{ model: db.Task }]
-        }).then(function(dbBoards) {
-          res.render("workspace", {
-            boards: dbBoards,
-            user: req.user
+        console.log(dataId);
+        var boardsArray = [];
+        // db.sequelize
+        //   .query(
+        //     `select u.id from Users u
+        // inner join Middles m on m.userid = u.id
+        // inner join Boards b on b.id = m.boardid
+        // where b.id = ?;`,
+        //     {
+        //       replacements: [dataId[0]],
+        //       type: db.Sequelize.QueryTypes.SELECT
+        //     }
+        //   )
+        //   .then(res => console.log(res));
+
+        // console.log(data.length);
+        data.map((e, i) => {
+          db.Board.findAll({
+            where: { id: e.id },
+            include: [{ model: db.Task }]
+          }).then(function(dbBoards) {
+            db.sequelize
+              .query(
+                `select u.username from Users u
+        inner join Middles m on m.userid = u.id
+        inner join Boards b on b.id = m.boardid
+        where b.id = ?;`,
+                {
+                  replacements: [dataId[i]],
+                  type: db.Sequelize.QueryTypes.SELECT
+                }
+              )
+              .then(boardUsers => {
+                var username = boardUsers.map(e => e.username);
+                console.log(username);
+                dbBoards[0].boardUsers = username;
+
+                // res.render("workspace", {
+                //   boards: dbBoards,
+                //   user: req.user
+                // });
+                // console.log("-----");
+                // console.log(boardsArray);
+                console.log("-----");
+                // console.log(dbBoards[0]);
+                boardsArray.push(dbBoards[0]);
+                // console.log(boardsArray[0]);
+                // console.log("-----");
+                console.log("-----");
+                if (data.length === boardsArray.length) {
+                  console.log("if is true");
+                  res.render("workspace", {
+                    boards: boardsArray,
+                    user: req.user
+                  });
+                } else {
+                  console.log("if is false");
+                }
+              });
           });
+          // console.log("map ends");
+          // console.log("last thing to happen");
         });
+        // console.log("ends");
+
+        //do an if(var.length)?
+        // db.Board.findAll({
+        //   where: { id: dataId },
+        //   include: [{ model: db.Task }]
+        // }).then(function(dbBoards) {
+        //   console.log(dbBoards.length);
+        //   res.render("workspace", {
+        //     boards: dbBoards,
+        //     user: req.user
+        //   });
+        // });
       });
   } else {
     res.render("404");

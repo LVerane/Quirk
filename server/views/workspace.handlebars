@@ -59,6 +59,9 @@
               {{/each}}
             </ul>
             {{!--  --}}
+            {{#each boardUsers}}
+            <p>{{this}}</p>
+            {{/each}}
             <input type="text" data-value="moreUser{{this.id}}" class="form-control" aria-describedby="task-text"
               placeholder="Add New User (to access this Board)">
             <button id="moreUser{{this.id}}" class=" btn btn-success addUser">Add User</button>

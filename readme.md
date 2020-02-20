@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <h1 align="center">quirk.</h1>
-    <a href="https://github.com/ALayendecker/Project-2"><strong>Documentation and Repo Link</strong></a>
+    <a href="https://github.com/LVerane/Quirk"><strong>Documentation and Repo Link</strong></a>
     <br />
   </p>
 </p>
@@ -137,7 +137,7 @@ This app uses an MVC file structure. Displayed below.
 
 ## Getting Started
 
-Simply visit (https://project-two-0.herokuapp.com/)
+Simply visit (https://quirk-0.herokuapp.com/)
 
 If you want to get your hands on the code simply look at the following section [Installation](#installation)
 
@@ -146,7 +146,7 @@ If you want to get your hands on the code simply look at the following section [
 1. Clone the repo
 
 ```sh
-git clone https://github.com/ALayendecker/Project-2.git
+git clone https://github.com/LVerane/Quirk.git
 ```
 
 2. Install NPM packages
@@ -167,7 +167,7 @@ Start a MySQL database and configure the server/config/config.json file accordin
 
 ## Usage
 
-Simply visit (https://project-two-0.herokuapp.com/) click the 'Create Account' button and sign up! Then proceed to login with your newly created credentials.
+Simply visit (https://quirk-0.herokuapp.com/) click the 'Create Account' button and sign up! Then proceed to login with your newly created credentials.
 
 You will then be able to add task boards add tasks inside those boards. You can also assign users to tasks as well!
 
@@ -193,7 +193,7 @@ Each time you log in you will also be provided a randomly generated cookie authe
 
 #### - [Remington Villa](https://github.com/remingtonjosh)
 
-Project Link: [https://github.com/Alayendecker/Project-2](https://github.com/Alayendecker/Project-2)
+Project Link: [https://github.com/LVerane/Quirk](https://github.com/LVerane/Quirk)
 
 Special thanks: [jgrisafe - For a well written article on Express and Sequelize Authentication and open source boilerplate](https://medium.com/@jgrisafe/custom-user-authentication-with-express-sequelize-and-bcrypt-667c4c0edef5)
 
